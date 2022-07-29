@@ -42,6 +42,7 @@ func mainRet() error {
 	if err != nil {
 		return fmt.Errorf("opening the car file: %w", err)
 	}
+	defer car.Close()
 
 	stats, err := car.Stat()
 	if err != nil {
